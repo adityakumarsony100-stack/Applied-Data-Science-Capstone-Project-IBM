@@ -2,7 +2,6 @@
 
 [![Python](https://img.shields.io/badge/python-3.11-blue?logo=python)](https://www.python.org/)
 [![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)](https://jupyter.org/)
-[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 ---
 
@@ -51,18 +50,16 @@ and generate actionable insights to support data-driven decision-making.
 
 ---
 
-## Results
-- **Best Model:** [Insert model name]  
+## Results  
 - **Key Insights:**  
-  - Insight 1  
-  - Insight 2  
-  - Insight 3  
+  - Logistic Regression, Decision Tree, SVM, KNeighbour model was build
+  - Decision Tree classifier gave best score
 
 ---
 
 ## Conclusion
-This project demonstrates practical application of data science techniques to [domain/problem].  
-The models and insights can help [stakeholders] make informed decisions based on data.
+This project demonstrates practical application of data science techniques to analyzing a problem.  
+The models and insights can help individual to make informed decisions based on data.
 
 ---
 
