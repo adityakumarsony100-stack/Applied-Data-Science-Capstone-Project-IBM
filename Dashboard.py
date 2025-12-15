@@ -38,12 +38,7 @@ app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
                     
                                 html.P("Payload range (Kg):"),
                                 # TASK 3: Add a slider to select payload range
-                                # dcc.RangeSlider(id='payload-slider',
-                                # min=0, max=10000, step=1000,
-                                # marks={0: '0',100: '100'}, 
-                                # value=[min_payload, max_payload],
-                                # marks={int(min_payload): str(int(min_payload)),
-                                # int(max_payload): str(int(max_payload))}),
+                            
                                 dcc.RangeSlider(
                                     id='payload-slider',
                                     min=min_payload,
@@ -61,24 +56,7 @@ app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
 
 # TASK 2:
 # Add a callback function for `site-dropdown` as input, `success-pie-chart` as output
-# @app.callback(Output(component_id='success-pie-chart',component_property='figure'),
-#                                 Input(component_id='site-dropdown',component_property='value'))
-#                                 def get_pie_chart(entered_site):
-#                                     filtered_df=spacex_df
-#                                     if entered_site=='ALL':
-#                                         fig=px.pie(filtered_df,values='class',
-#                                         names='pie chart names',
-#                                         title='title')
-#                                         return fig
-#                                     else:
-#                                         # Filter records for the selected launch site
-#                                         site_df = filtered_df[filtered_df['Launch Site'] == entered_site]
-#                                         fig=px.pie(
-#                                             site_df,
-#                                             names='class',
-#                                             title=f'Success Vs Failure for site{entered_site}'
-#                                         )
-#                                         return fig
+
 
 # Function decorator to specify function input and output
 @app.callback(
@@ -122,14 +100,7 @@ def get_scatter_chart(entered_site,payload_range):
         (spacex_df['Payload Mass (kg)']>=low) &
         (spacex_df['Payload Mass (kg)']<=high)
     ]
-    # if entered_site=='ALL':
-    #     fig=px.scatter(df_filtered,
-    #     values='class',
-    #     names='scatter chart names',
-    #     title='title'
-    #     =
-    #     return fig
-    # Case 1: All sites selected
+   
     if entered_site == 'ALL':
         fig = px.scatter(
             df_filtered,
@@ -153,3 +124,4 @@ def get_scatter_chart(entered_site,payload_range):
 # Run the app
 if __name__ == '__main__':
     app.run()
+
